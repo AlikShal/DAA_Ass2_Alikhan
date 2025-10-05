@@ -3,37 +3,27 @@ package algorithm;
 import metrics.PerformanceTracker;
 
 public class Kadane {
-    // Returns maximum subarray sum using Kadane’s Algorithm
     public static long maxSubArray(int[] arr, PerformanceTracker tracker) {
         if (arr == null || arr.length == 0) return 0;
 
         tracker.start();
 
-        long maxEndingHere = arr[0];
-        long maxSoFar = arr[0];
-        tracker.countAssignment();
-        tracker.countAssignment();
+        long meh = arr[0]; tracker.countAssignment(); // maxEndingHere
+        long msf = arr[0]; tracker.countAssignment(); // maxSoFar
 
         for (int i = 1; i < arr.length; i++) {
-            long extend = maxEndingHere + arr[i];
-            tracker.countAssignment();
+            long ai = arr[i];
+            long sum = meh + ai;
 
             tracker.countComparison();
-            if (extend > arr[i]) {
-                maxEndingHere = extend;
-            } else {
-                maxEndingHere = arr[i];
-            }
-            tracker.countAssignment();
+            if (sum > ai) { meh = sum; tracker.countAssignment(); }
+            else          { meh = ai;  tracker.countAssignment(); }
 
             tracker.countComparison();
-            if (maxEndingHere > maxSoFar) {
-                maxSoFar = maxEndingHere;
-                tracker.countAssignment();
-            }
+            if (meh > msf) { msf = meh; tracker.countAssignment(); }
         }
 
         tracker.stop();
-        return maxSoFar;
+        return msf;
     }
 }
