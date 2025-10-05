@@ -51,7 +51,7 @@ public class KadaneTest {
         int[] arr = {2, -1, 2, 3, 4, -5};
         PerformanceTracker tracker = new PerformanceTracker();
         Kadane.maxSubArray(arr, tracker);
-        tracker.writeToCSV("target/kadane_metrics.csv", "Kadane_Test", 10);
+        tracker.writeCsv("target/kadane_metrics.csv", "Kadane_Test", 10);
         assertTrue(true, "Metrics should be written to CSV successfully");
     }
 }
