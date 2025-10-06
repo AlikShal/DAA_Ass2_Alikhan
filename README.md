@@ -23,11 +23,11 @@ Space Complexity: O(1) (Requires a second pass to verify the candidate)
  ### 2. Runtime Comparison
 
 Below is a graph that compares the runtime of Kadane’s algorithm and Boyer-Moore Majority Vote Algorithm as the input size increases.
-![Runtime Comparison](kadane_boyer_extended_runtime_plot.png)
+![Runtime Comparison](docs/kadane_boyer_extended_runtime_plot.png)
 
 To give an alternative perspective, the next graph plots runtime on a more granular log–log scale, revealing slight differences in constant factors. Kadane’s algorithm (blue) is consistently a bit faster than Boyer–Moore (orange) for the tested input sizes, though both lines remain straight, confirming linear complexity.
 
-![Execution Time](kadane_boyer_runtime_plot.png)
+![Execution Time](docs/kadane_boyer_runtime_plot.png)
 
 ### 3. Comparison Table
 | Aspect                   | Kadane’s algorithm                                                                          | Boyer–Moore majority vote                                                                                 |
